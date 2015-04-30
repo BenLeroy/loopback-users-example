@@ -2,14 +2,16 @@
 
 ## A first project with loopback.io
 
-## **Goal :**
+## Goal :
 
 CRUD of users with loopback.io
 
 
-### **How to :**
+## How to install :
 
 From command-line :
 
-  npm install
-  bower install
+```bash
+npm install
+bower install
+```
