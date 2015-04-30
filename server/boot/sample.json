@@ -1,0 +1,23 @@
+[
+  {
+    "firstname": "Aaaaaaa"
+    , "lastname": "Aaaaaaa"
+    , "username": "Aaaaaaa"
+    , "password": "Aaaaaaa"
+    , "id": 1
+  }
+ , {
+    "firstname": "Bbbbb"
+    , "lastname": "Bbbbb"
+    , "username": "Bbbbb"
+    , "password": "Bbbbb"
+    , "id": 2
+  }
+  , {
+    "firstname": "Ccccc"
+    , "lastname": "Ccccc"
+    , "username": "Ccccc"
+    , "password": "Ccccc"
+    , "id": 3
+  }
+];

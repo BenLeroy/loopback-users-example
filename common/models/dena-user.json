@@ -1,0 +1,32 @@
+{
+  "name": "Dena_User",
+  "plural": "Dena_Users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "hidden": ["password"],
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

@@ -1,0 +1,68 @@
+.barnav{
+	background-color: #C0C0C0;
+}
+
+.zikon{
+	max-height: 48px;
+	max-width: 48px;
+	margin-top : -15px;
+	margin-left: -15px;
+	display: inline-block;
+}
+
+h1 {
+	text-align: center;
+}
+
+#barretitre{
+	width: 100px;
+}
+
+.navalign{
+	margin-top: -47px;
+	margin-left: 30px !important;
+	display: inline-block;
+}
+
+.navimenu > a:hover {
+	background-color: black !important;
+	color: white !important;
+}
+
+
+#transback {
+	background: url('images/Retro-music-HD-Wallpapers.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	color:#fff;
+  	background-color:#333;
+  }
+
+.jumbalign{
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: #C0C0C0;
+}
+
+.jumbotext{
+	text-align: center;
+	color: #4682B4;
+}
+
+.jumboform{
+	border-radius: 25px;
+}
+
+.paf{
+	color: red !important;
+}
+
+.panoform{
+	border-radius: 25px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	background-color: #DDD;
+}
+
