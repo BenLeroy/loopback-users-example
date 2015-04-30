@@ -24,7 +24,6 @@
       "required": true
     }
   },
-  "hidden": ["password"],
   "validations": [],
   "relations": {},
   "acls": [],
