@@ -7,10 +7,9 @@
 CRUD of users with loopback.io
 
 
-### **Config files :**
+### **How to :**
 
-https://github.com/opendena/coding-style/blob/master/.editorconfig
+From command-line :
 
-https://github.com/opendena/coding-style/blob/master/.jshintrc
-
-https://github.com/opendena/coding-style/blob/master/.eslintrc
+  npm install
+  bower install
