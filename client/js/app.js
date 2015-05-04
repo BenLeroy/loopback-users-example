@@ -11,23 +11,29 @@
       , '$urlRouterProvider'
       , function ($stateProvider, $urlRouterProvider) {
 
-        $stateProvider.state('list', {
-          url: 'list'
-          , templateUrl: 'views/list.html'
-          //, controller: 'ListController'
-        })
-        .state('index', {
+        $stateProvider.state('index', {
           url: '/'
           , template: '<h1>Index</h1><br/>'
+        })
+        .state('list', {
+          url: 'list'
+          , templateUrl: 'views/list.html'
         })
         .state('userEdit', {
           url: 'user/edit/:id'
           , templateUrl: 'views/edit.html'
+          , controller: 'EditCtrl'
         })
-        // .state('user/del', {
-        //   url: '/del/:id'
-        //   , templateUrl: 'views/delete.html'
-        // })
+        .state('userDel', {
+          url: 'user/del/:id'
+          , templateUrl: 'views/delete.html'
+          , controller: 'DelCtrl'
+        })
+        .state('userNew', {
+          url: '/user/add'
+          , templateUrl: 'views/add.html'
+          , controller: 'AddCtrl'
+        })
         ;
         $urlRouterProvider.otherwise('/');
 
@@ -41,53 +47,57 @@
 
       List.users = [];
 
-      Dena_User.find().$promise.then(function(data){
+      Dena_User.find().$promise.then(function (data){
 
         List.users = data;
       });
     });
 
-  // app.controller('EditCtrl'
-  //   , function (Dena_User, Id) {
+  app.controller('EditCtrl'
+    , function (Dena_User, $stateParams, $scope) {
 
-  //     var Edit = this;
+      var Edit = this;
 
-  //     Edit.id = Id;
+      Dena_User.findById({id: $stateParams.id}
+        , function (data) {
 
-  //     Dena_User.findById({id: Edit.id}, function (err, data){
+        Edit.user = data;
 
-  //       Dena_User.fName = data.firstname;
-  //       Dena_User.lName = data.lastname;
-  //       Dena_User.uName = data.username;
-  //       Dena_User.uPass = data.password;
+      });
 
+      $scope.SaveMod = function () {
 
+        //todo: gérer le chgmt de password
+        Edit.user.$save();
+      };
 
-      //}).$promise.then(function(data){
+    });
 
-      //Edit.user = data;
-      // Dena_User.firstname = fName;
-      // Dena_User.lastname = lName;
-      // Dena_User.username = uName;
-      // Dena_User.password = uPass;
-      // Dena_user.$save();
+  app.controller('DelCtrl'
+    , function (Dena_User, $stateParams, $scope) {
 
-    //   });
+      var Del = this;
 
-    // });
+      Dena_User.findById({id: $stateParams.id}
+        , function (data) {
 
-  // app.controller('DelCtrl'
-  //   , function (Dena_User, Id) {
+        Del.user = data;
 
-  //     var Del = this;
+       });
 
-  //     Dena_User.findById({id: Id}).$promise.then(function(data){
+      $scope.deleteUser = function () {
 
-  //       Del.user = data;
+        console.log(Del.user);
 
-  //       Dena_User.deleteById({id: Id});
+        Del.user.$delete();
+      };
+    });
 
-  //     });
-  //   });
+  app.controller('AddCtrl'
+    , function ($scope) {
 
+      $scope.NewUser = function(){
+        Dena_User.create($scope);
+      };
+    });
 })();

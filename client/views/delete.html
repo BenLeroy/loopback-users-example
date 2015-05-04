@@ -1,17 +1,21 @@
-<div class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<h1>Delete user</h1>
+<div ng-form='formDel' ng-controller='DelCtrl as Del'>
+  <div class="form-group">
+      <label for="firstname">Nom de famille</label>
+      <div type="text" class="form-control">{{Del.user.firstname}}</div>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Prénom</label>
+      <div type="text" class="form-control">{{Del.user.lastname}}</div>
+    </div>
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <div type="text" class="form-control">{{Del.user.username}}</div>
+    </div>
+    <a type="button" ui-sref='list' ng-click='deleteUser()' class="btn btn-success">
+      <span class='glyphicon glyphicon-ok' aria-hidden='true' title='Valider'></span>
+    </a>
+    <a type="button" ui-sref='list' class="btn btn-danger">
+      <span class='glyphicon glyphicon-stop' aria-hidden='true' title='Annuler'></span>
+    </a>
+</div>

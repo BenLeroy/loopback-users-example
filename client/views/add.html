@@ -1,26 +1,26 @@
 <h1>Edit user</h1>
-<div ng-form='formMod' ng-controller='EditCtrl as Edit'>
+<div ng-form='formAdd'>
 	<div class="form-group">
    		<label for="firstname">Nom de famille</label>
-    	<input type="text" class="form-control" ng-model='Edit.user.firstname'>
+    	<input type="text" class="form-control" ng-model='firstname'>
   	</div>
   	<div class="form-group">
   	  <label for="lastname">Prénom</label>
-  	  <input type="text" class="form-control" ng-model='Edit.user.lastname'>
+  	  <input type="text" class="form-control" ng-model='lastname'>
   	</div>
   	<div class="form-group">
   	  <label for="username">Nom d'utilisateur</label>
-  	  <input type="text" class="form-control" ng-model='Edit.user.username'>
+  	  <input type="text" class="form-control" ng-model='Add.user.username'>
   	</div>
   	<div class="form-group">
   	  <label for="password">Mot de passe</label>
-  	  <input type="password" class="form-control" ng-model='Edit.user.password' id="uPass">
+  	  <input type="password" class="form-control" ng-model='Add.user.password' id="uPass">
   	</div>
   	
-  	<a type="button" ui-sref='list' ng-click='SaveMod()' class="btn btn-success">
+  	<a type="button" ng-click='NewUser()' class="btn btn-success">
   		<span class='glyphicon glyphicon-ok' aria-hidden='true' title='Valider'></span>
   	</a>
-  	<a type="button" ui-sref='list' class="btn btn-danger">
+  	<a type="button" class="btn btn-danger">
   		<span class='glyphicon glyphicon-stop' aria-hidden='true' title='Annuler'></span>
   	</a>
 </div>
