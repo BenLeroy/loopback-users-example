@@ -20,7 +20,7 @@
 		<nav class="barnav navbar navbar-default navbar-static-top">
 	  		<div class="container-fluid">
 			    <div class="navbar-header">
-	      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-	collapse-1">
+	      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				        <span class="sr-only">Toggle navigation</span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
@@ -30,19 +30,16 @@
 	  			</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav navbar-right">
-				        <li class="navimenu"><a ui-sref="liste">Liste des utilisateurs<span class="sr-only">(current)</span></a></li>
+				        <li class="navimenu">
+				        	<a ui-sref="list">Liste des utilisateurs
+				        		<span class="sr-only">(current)</span>
+				        	</a>
+				        </li>
 				       
 				      </ul>
 				</div>
 	  		</div>
 	  	</nav>
-	  	<div class="row" ng-controller='ListController as List'>
-			<div class="col-sm-10 col-xs-12">
-				
-				<div ui-view></div>
-			</div>
-		</div>
-	  			
-	  
+			<div ui-view></div>
 	</body>
 </html>
