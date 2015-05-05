@@ -16,16 +16,17 @@
           , template: '<h1>Index</h1><br/>'
         })
         .state('list', {
-          url: 'list'
+          url: '/list'
           , templateUrl: 'views/list.html'
+          , controller: 'ListCtrl'
         })
         .state('userEdit', {
-          url: 'user/edit/:id'
+          url: '/user/edit/:id'
           , templateUrl: 'views/edit.html'
           , controller: 'EditCtrl'
         })
         .state('userDel', {
-          url: 'user/del/:id'
+          url: '/user/del/:id'
           , templateUrl: 'views/delete.html'
           , controller: 'DelCtrl'
         })
@@ -40,7 +41,7 @@
       }]);
 
 
-  app.controller('ListController'
+  app.controller('ListCtrl'
     , function (Dena_User){
 
       var List = this;
@@ -94,10 +95,13 @@
     });
 
   app.controller('AddCtrl'
-    , function ($scope) {
+    , function (Dena_User, $scope, $location) {
 
       $scope.NewUser = function(){
-        Dena_User.create($scope);
+
+        Dena_User.create($scope.user, function () {
+          $location.path('/list');
+        });
       };
     });
 })();
