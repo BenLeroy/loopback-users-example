@@ -37,11 +37,9 @@
         })
         ;
         $urlRouterProvider.otherwise('/');
+  }])
 
-      }]);
-
-
-  app.controller('ListCtrl'
+  .controller('ListCtrl'
     , function (Dena_User){
 
       var List = this;
@@ -52,9 +50,9 @@
 
         List.users = data;
       });
-    });
+    })
 
-  app.controller('EditCtrl'
+  .controller('EditCtrl'
     , function (Dena_User, $stateParams, $scope) {
 
       var Edit = this;
@@ -63,7 +61,6 @@
         , function (data) {
 
         Edit.user = data;
-
       });
 
       $scope.SaveMod = function () {
@@ -71,11 +68,10 @@
         //todo: gérer le chgmt de password
         Edit.user.$save();
       };
+    })
 
-    });
-
-  app.controller('DelCtrl'
-    , function (Dena_User, $stateParams, $scope) {
+  .controller('DelCtrl'
+    , function (Dena_User, $stateParams, $scope, $location) {
 
       var Del = this;
 
@@ -83,18 +79,17 @@
         , function (data) {
 
         Del.user = data;
-
-       });
+      });
 
       $scope.deleteUser = function () {
 
-        console.log(Del.user);
-
-        Del.user.$delete();
+        Del.user.$delete(function () {
+          $location.path('/list'); // err: Could not resolve '/list' from state 'userDel'
+        });
       };
-    });
+    }
 
-  app.controller('AddCtrl'
+  .controller('AddCtrl'
     , function (Dena_User, $scope, $location) {
 
       $scope.NewUser = function(){
