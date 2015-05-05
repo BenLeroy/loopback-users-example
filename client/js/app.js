@@ -83,11 +83,9 @@
 
       $scope.deleteUser = function () {
 
-        Del.user.$delete(function () {
-          $location.path('/list'); // err: Could not resolve '/list' from state 'userDel'
-        });
+        Del.user.$delete(null, $location.path('/list'));
       };
-    }
+    })
 
   .controller('AddCtrl'
     , function (Dena_User, $scope, $location) {
