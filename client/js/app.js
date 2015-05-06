@@ -4,7 +4,8 @@
 
   var app = angular.module('userList'
                           , ['lbServices'
-                          , 'ui.router']);
+                          , 'ui.router']
+                          );
 
   app.config(
       ['$stateProvider'

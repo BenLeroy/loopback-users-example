@@ -11,6 +11,15 @@ h1 {
 	margin-right: 10% !important;
 }
 
+.form-group{
+	margin-left: 10% !important;
+	margin-right: 10% !important;
+}
+
+.decal{
+	margin-left: 10%;
+}
+
 #barretitre{
 	width: 100px;
 }

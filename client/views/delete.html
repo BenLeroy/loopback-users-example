@@ -1,4 +1,4 @@
-<h1>Delete user</h1>
+<h1>Effacer un utilisateur</h1>
 <div ng-form='formDel' ng-controller='DelCtrl as Del'>
   <div class="form-group">
       <label for="firstname">Prénom</label>
@@ -12,7 +12,7 @@
       <label for="username">Nom d'utilisateur</label>
       <div type="text" class="form-control">{{Del.user.username}}</div>
     </div>
-    <a type="button" ng-click='deleteUser()' class="btn btn-success">
+    <a type="button" ng-click='deleteUser()' class="decal btn btn-success">
       <span class='glyphicon glyphicon-ok' aria-hidden='true' title='Valider'></span>
     </a>
     <a type="button" ui-sref='list' class="btn btn-danger">
