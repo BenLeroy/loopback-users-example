@@ -29,3 +29,6 @@ Run : `$ npm start `
 
 Then go with your favorite browser at [http://localhost:3000/](http://localhost:3000/)
 
+## Tests
+
+Test script is using mocha and zombiejs and is available via `$ npm test`
