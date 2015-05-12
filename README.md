@@ -11,7 +11,7 @@ CRUD of users with loopback.io
 
 - Node.js from https://nodejs.org/
 
-- Bower, installed with node.js by running : ` npm install bower -g `
+- Bower, installed with node.js by running : `$ npm install bower -g `
 
 
 ###  How to install :
@@ -19,6 +19,13 @@ CRUD of users with loopback.io
 Once you have node.js & bower installed, run :
 
 ```bash
-npm install
-bower install
+$ npm install
+$ bower install
 ```
+
+## How to use :
+
+Run : `$ npm start `
+
+Then go with your favorite browser at [http://localhost:3000/](http://localhost:3000/)
+
