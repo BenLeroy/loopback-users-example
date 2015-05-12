@@ -3,7 +3,6 @@ process.env.NODE_ENV = 'test';
 
 var app = require('../server/server.js');
 var Browser = require('zombie');
-var recupId = -1;
 
 function showMeUrl (browser) {
   console.log('Visitor is here: ' + browser.url);
@@ -99,7 +98,10 @@ describe('Visitor comes to homepage', function() {
   describe('He wants to add another user & cancels before submit', function () {
 
     before(function (done) {
-      this.browser.clickLink('a.btn-info[ui-sref="userNew"]', done);
+      this.browser.clickLink(
+        'a.btn-info[ui-sref="userNew"]'
+        , done
+        );
     });
 
     it('should come back to list on cancel button click', function (done) {
@@ -110,7 +112,6 @@ describe('Visitor comes to homepage', function() {
     after(function () {
       showMeUrl(this.browser);
     });
-
   });
 
   describe('He wants to edit informations for one user', function () {
@@ -150,7 +151,6 @@ describe('Visitor comes to homepage', function() {
           .fill('[ng-model="Edit.user.password"]', 'Bleus')
       ;
       this.browser.clickLink('a.btn-success', done);
-
     });
 
     it('should be back at list and altered first record', function () {
@@ -170,15 +170,10 @@ describe('Visitor comes to homepage', function() {
     });
   });
 
-
-
   after(function (done) {
     this.server.close(done);
   });
 });
-
-
-
 
 // retour à la liste
 
